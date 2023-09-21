@@ -1,5 +1,3 @@
-import styles from "../styles/layout.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
@@ -9,7 +7,7 @@ export const siteTitle = "Larissa G.";
 
 export default function Layout({ children, home }) {
   return (
-    <div className={styles.container}>
+    <div className="container mx-auto mt-10 px-40 grid place-items-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="My personal website" />
@@ -22,38 +20,41 @@ export default function Layout({ children, home }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <header className={styles.header}>
+      <header className="flex flex-col justify-center items-center pb-6">
         {home ? (
           <>
             <Image
               priority
               src={"/images/profile.jpeg"}
-              className={`${utilStyles.borderCircle} ${utilStyles.centerItems} `}
+              className="rounded-full"
               height={144}
               width={144}
               alt=""
             />
-            <h1 className={utilStyles.heading2XL}>{name}</h1>
+            <h1 className="text-lg">{name}</h1>
           </>
         ) : (
           <>
-            <Link href={"/"} className={utilStyles.centerItems}>
+            <Link
+              href={"/"}
+              className="flex flex-col justify-center items-center gap-1"
+            >
               <Image
                 priority
                 src={"/images/profile.jpeg"}
-                className={utilStyles.borderCircle}
+                className="rounded-full"
                 height={108}
                 width={108}
                 alt=""
               />
-              <h2 className={utilStyles.headingLg}>{name}</h2>
+              <h2 className="text-lg">{name}</h2>
             </Link>
           </>
         )}
       </header>
       <main>{children}</main>
       {!home && (
-        <footer className={styles.backToHome}>
+        <footer className="mt-3">
           <Link href={"/"}>Back to home</Link>
         </footer>
       )}
