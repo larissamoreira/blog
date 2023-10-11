@@ -83,7 +83,7 @@ export default function Home() {
         <div>
           <h1 className="font-mono pb-2">/About me</h1>
           <p>
-            I'm Brazilian Software Developer with 5 years of experience in the
+            I'm a Brazilian Software Developer with 5 years of experience in the
             software industry.
             <br /> I graduated with a Technologist degree in Analysis and
             Development of Computer Systems at{" "}
@@ -168,7 +168,7 @@ export default function Home() {
             alt=""
           />
           <h1 className="text-xl text-center pt-2">{name}</h1>
-          <div className="text-violet-400 flex gap-2 justify-center">
+          <div className="text-violet-400 flex gap-2 justify-center pt-2">
             <a href="https://github.com/larissadotjs" target="_blank">
               <UilGithub />
             </a>
