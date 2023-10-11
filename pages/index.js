@@ -1,4 +1,8 @@
 import { useState } from "react";
+import { UilAngleRight } from "@iconscout/react-unicons";
+import { UilEnvelope } from "@iconscout/react-unicons";
+import Image from "next/image";
+const name = "Larissa Gusmão";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Umind");
@@ -73,27 +77,93 @@ export default function Home() {
 
   return (
     <>
-      <section>
-        <h1 className="text-lg">hey there! Larissa here.</h1>
-        <p>
-          I'm Software Developer with 5 years of experience in the software
-          industry. My focus area for the past few years has been frontend
-          development with JavaScript and React, but I also have experience in
-          the backend with Django and Node. besides coding, I'm interested in{" "}
-          <a
-            href="https://www.goodreads.com/user/show/48945955-larissa-gusm-o"
-            target="/"
-          >
-            books
-          </a>{" "}
-          and{" "}
-          <a href="https://letterboxd.com/nnothumann/" target="/">
-            films
-          </a>
-          .
-        </p>
+      <section className="flex gap-4">
+        <div>
+          <h1 className="font-mono pb-2">/About me</h1>
+          <p>
+            I'm Software Developer with 5 years of experience in the software
+            industry.
+            <br /> I graduated with a Technologist degree in Analysis and
+            Development of Computer Systems. <br />
+          </p>
+          <div className="py-4">
+            Here are some technologies I've worked with:
+            <ul className="flex gap-4">
+              <div>
+                <li className="flex flex-row items-center">
+                  <UilAngleRight size="20" color="#A78BFA" />
+                  Javascript ES6+
+                </li>
+                <li className="flex flex-row items-center">
+                  <UilAngleRight size="20" color="#A78BFA" />
+                  React.js
+                </li>
+                <li className="flex flex-row items-center">
+                  <UilAngleRight size="20" color="#A78BFA" />
+                  Vue.js
+                </li>
+                <li className="flex flex-row items-center">
+                  <UilAngleRight size="20" color="#A78BFA" />
+                  Typescript
+                </li>
+              </div>
+              <div>
+                <li className="flex flex-row items-center">
+                  <UilAngleRight size="20" color="#A78BFA" />
+                  Next.js
+                </li>
+                <li className="flex flex-row items-center">
+                  <UilAngleRight size="20" color="#A78BFA" />
+                  Tailwind
+                </li>
+                <li className="flex flex-row items-center">
+                  <UilAngleRight size="20" color="#A78BFA" />
+                  HTML & CSS
+                </li>
+                <li className="flex flex-row items-center">
+                  <UilAngleRight size="20" color="#A78BFA" />
+                  Python & Django
+                </li>
+              </div>
+            </ul>
+          </div>
+          <div>
+            Outside work, I'm interested in{" "}
+            <a
+              href="https://www.goodreads.com/user/show/48945955-larissa-gusm-o"
+              target="/"
+            >
+              books
+            </a>{" "}
+            and{" "}
+            <a href="https://letterboxd.com/nnothumann/" target="/">
+              films
+            </a>
+            <p>
+              <button
+                onClick={() => {
+                  window.location.href = `mailto:lgusmao1996@gmail.com`;
+                }}
+                className="flex items-center border p-2 gap-1 hover:bg-slate-100"
+              >
+                <UilEnvelope size="24" color="#A78BFA" /> <span>say hi!</span>
+              </button>
+            </p>
+          </div>
+        </div>
+        <div>
+          <Image
+            priority
+            src={"/images/profile.jpeg"}
+            className="rounded-md"
+            height={260}
+            width={260}
+            alt=""
+          />
+          <h1 className="text-xl text-center pt-2">{name}</h1>
+        </div>
       </section>
-      <section className="py-10">
+      <section className="py-5">
         <h1 className="font-mono pb-4">/Experience</h1>
         <div className="flex flex-row gap-20">
           <div className="flex flex-col items-start w-24">
@@ -102,7 +172,7 @@ export default function Home() {
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
                 className={`relative px-3 py-2 ${
-                  activeTab === tab.id ? "text-purple-700" : " text-gray-700"
+                  activeTab === tab.id ? "text-violet-400" : " text-gray-700"
                 }`}
               >
                 {tab.id}
