@@ -53,11 +53,11 @@ export default function Layout({ children, home }) {
         )}
       </header>
       <main>{children}</main>
-      {!home && (
+      {/* {!home && (
         <footer className="mt-3">
           <Link href={"/"}>Back to home</Link>
         </footer>
-      )}
+      )} */}
     </div>
   );
 }
