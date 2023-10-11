@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { UilAngleRight } from "@iconscout/react-unicons";
 import { UilEnvelope } from "@iconscout/react-unicons";
+import { UilGithub } from "@iconscout/react-unicons";
+import { UilLinkedin } from "@iconscout/react-unicons";
 import Image from "next/image";
 const name = "Larissa Gusmão";
 
@@ -166,6 +168,17 @@ export default function Home() {
             alt=""
           />
           <h1 className="text-xl text-center pt-2">{name}</h1>
+          <div className="text-violet-400 flex gap-2 justify-center">
+            <a href="https://github.com/larissadotjs" target="_blank">
+              <UilGithub />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/larissa-gusmao/"
+              target="_blank"
+            >
+              <UilLinkedin />
+            </a>
+          </div>
         </div>
       </section>
       <section className="py-5">
