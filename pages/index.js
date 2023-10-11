@@ -81,10 +81,15 @@ export default function Home() {
         <div>
           <h1 className="font-mono pb-2">/About me</h1>
           <p>
-            I'm Software Developer with 5 years of experience in the software
-            industry.
+            I'm Brazilian Software Developer with 5 years of experience in the
+            software industry.
             <br /> I graduated with a Technologist degree in Analysis and
-            Development of Computer Systems. <br />
+            Development of Computer Systems at{" "}
+            <a href="https://www.ifpb.edu.br/" target="_blank">
+              Instituto Federal da Paraíba
+            </a>
+            .
+            <br />
           </p>
           <div className="py-4">
             Here are some technologies I've worked with:
@@ -144,7 +149,7 @@ export default function Home() {
                 onClick={() => {
                   window.location.href = `mailto:lgusmao1996@gmail.com`;
                 }}
-                className="flex items-center border p-2 gap-1 hover:bg-slate-100"
+                className="flex items-center border p-2 gap-1 hover:bg-slate-100 mt-2"
               >
                 <UilEnvelope size="24" color="#A78BFA" /> <span>say hi!</span>
               </button>
