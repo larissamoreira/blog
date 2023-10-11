@@ -189,10 +189,11 @@ export default function Home() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative px-3 py-2 ${
+                className={`relative flex items-center py-1 ${
                   activeTab === tab.id ? "text-violet-400" : " text-gray-700"
                 }`}
               >
+                <UilAngleRight size="20" color="#A78BFA" />
                 {tab.id}
               </button>
             ))}
@@ -214,7 +215,7 @@ export default function Home() {
 
                 <ul className="pt-4 pl-4 list-disc">
                   {tab.listItems.map((item, index) => (
-                    <li key={index}> {item}</li>
+                    <li key={index}>{item}</li>
                   ))}
                 </ul>
               </div>
