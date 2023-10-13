@@ -7,7 +7,7 @@ export const siteTitle = "Larissa G.";
 
 export default function Layout({ children, home }) {
   return (
-    <div className="container mx-auto mt-10 px-40 grid place-items-center">
+    <div className="container mx-auto mt-5 md:mt-10 px-6 md:px-40 grid place-items-center">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta name="description" content="My personal website" />

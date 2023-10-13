@@ -79,9 +79,9 @@ export default function Home() {
 
   return (
     <>
-      <section className="flex gap-4">
+      <section className="flex flex-col md:flex-row gap-4">
         <div>
-          <h1 className="font-mono pb-2">/About me</h1>
+          <h1 className="font-mono pb-2 text-xl">/About me</h1>
           <p>
             I'm a Brazilian Software Developer with 5 years of experience in the
             software industry.
@@ -158,7 +158,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-        <div>
+        <div className="order-first flex flex-col items-center md:order-last">
           <Image
             priority
             src={"/images/profile.jpeg"}
@@ -168,7 +168,7 @@ export default function Home() {
             alt=""
           />
           <h1 className="text-xl text-center pt-2">{name}</h1>
-          <div className="text-violet-400 flex gap-2 justify-center pt-2">
+          <div className="text-violet-400 flex gap-2 justify-center pt-1">
             <a href="https://github.com/larissadotjs" target="_blank">
               <UilGithub />
             </a>
@@ -182,14 +182,14 @@ export default function Home() {
         </div>
       </section>
       <section className="py-5">
-        <h1 className="font-mono pb-4">/Experience</h1>
-        <div className="flex flex-row gap-20">
-          <div className="flex flex-col items-start w-24">
+        <h1 className="font-mono pb-4 text-xl">/Experience</h1>
+        <div className="flex flex-col md:flex-row gap-5 md:gap-20">
+          <div className="flex md:flex-col items-start w-24">
             {tabContent.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative flex items-center py-1 ${
+                className={`relative flex flex-row items-center py-1 ${
                   activeTab === tab.id ? "text-violet-400" : " text-gray-700"
                 }`}
               >
