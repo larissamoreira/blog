@@ -8,6 +8,7 @@ const name = "Larissa Gusmão";
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("Umind");
+  const [activeTabProject, setActiveTabProject] = useState("weather");
 
   const tabContent = [
     {
@@ -77,6 +78,15 @@ export default function Home() {
     },
   ];
 
+  const projects = [
+    {
+      id: "weather",
+      name: 'Weather finder',
+      image: '/images/weather.png',
+      link: 'https://larissamoreira.github.io/weather_finder/'
+    }
+  ]
+
   return (
     <>
       <section className="flex flex-col md:flex-row gap-4">
@@ -129,34 +139,21 @@ export default function Home() {
                 </li>
                 <li className="flex flex-row items-center">
                   <UilAngleRight size="20" color="#A78BFA" />
-                  Python & Django
+                  Python/Django/Flask
                 </li>
               </div>
             </ul>
           </div>
-          <div>
-            Outside work, I'm interested in{" "}
-            <a
-              href="https://www.goodreads.com/user/show/48945955-larissa-gusm-o"
-              target="/"
+          <p>
+            <button
+              onClick={() => {
+                window.location.href = `mailto:lgusmao1996@gmail.com`;
+              }}
+              className="flex items-center border p-2 gap-1 hover:bg-slate-100 my-2"
             >
-              books
-            </a>{" "}
-            and{" "}
-            <a href="https://letterboxd.com/nnothumann/" target="/">
-              films
-            </a>
-            <p>
-              <button
-                onClick={() => {
-                  window.location.href = `mailto:lgusmao1996@gmail.com`;
-                }}
-                className="flex items-center border p-2 gap-1 hover:bg-slate-100 mt-2"
-              >
-                <UilEnvelope size="24" color="#A78BFA" /> <span>say hi!</span>
-              </button>
-            </p>
-          </div>
+              <UilEnvelope size="24" color="#A78BFA" /> <span>say hi!</span>
+            </button>
+          </p>
         </div>
         <div className="order-first flex flex-col items-center md:order-last">
           <Image
@@ -169,7 +166,7 @@ export default function Home() {
           />
           <h1 className="text-xl text-center pt-2">{name}</h1>
           <div className="text-violet-400 flex gap-2 justify-center pt-1">
-            <a href="https://github.com/larissadotjs" target="_blank">
+            <a href="https://github.com/larissamoreira" target="_blank">
               <UilGithub />
             </a>
             <a
@@ -181,6 +178,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <hr />
       <section className="py-5">
         <h1 className="font-mono pb-4 text-xl">/Experience</h1>
         <div className="flex flex-col md:flex-row gap-5 md:gap-20">
@@ -218,6 +216,39 @@ export default function Home() {
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      <hr />
+      <section className="py-5">
+        <h1 className="font-mono pb-4 text-xl">/Personal Projects</h1>
+        <div className="flex flex-col md:flex-row gap-5 md:gap-20">
+          <div className="flex md:flex-col items-start w-30">
+            {projects.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTabProject(tab.id)}
+                className={`relative flex flex-row items-center py-1 ${
+                  activeTabProject === tab.id ? "text-violet-400" : " text-gray-700"
+                }`}
+              >
+                <UilAngleRight size="20" color="#A78BFA" />
+                {tab.name}
+              </button>
+            ))}
+          </div>
+          <div>
+            {projects.map((tab) => (
+              <div
+                key={tab.id}
+                style={{ display: activeTabProject === tab.id ? "block" : "none" }}
+              >
+                <h1 className="text-lg break-words">{tab.name} - <a href={tab.link} target="blank">Demo</a></h1>
+                <div className="flex flex-row gap-2 items-center text-gray-500">
+                  <Image src={tab.image} height={560} width={560}/>
+                </div>
               </div>
             ))}
           </div>
